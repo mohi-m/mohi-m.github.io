@@ -4,6 +4,7 @@ import { ghPages } from 'vite-plugin-gh-pages';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/mohi-m.github.io/',
   plugins: [react(), ghPages()],
   optimizeDeps: {
     exclude: ['lucide-react'],
