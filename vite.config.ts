@@ -8,5 +8,5 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
-  base: '/mohi-m.github.io/',
+  base: process.env.NODE_ENV === 'production' ? '/mohi-m.github.io/' : '/',
 });
