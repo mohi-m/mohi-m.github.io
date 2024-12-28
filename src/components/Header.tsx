@@ -13,13 +13,13 @@ export function Header() {
             <a href="#contact" className="text-gray-600 hover:text-gray-900 transition-colors">Contact</a>
           </div>
           <div className="flex items-center gap-4">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900 transition-colors">
+            <a href="https://github.com/mohi-m" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900 transition-colors">
               <Github size={20} />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900 transition-colors">
+            <a href="https://www.linkedin.com/in/mohi-madhu/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900 transition-colors">
               <Linkedin size={20} />
             </a>
-            <a href="mailto:your.email@example.com" className="text-gray-600 hover:text-gray-900 transition-colors">
+            <a href="mailto:mohi2@illinois.edu" className="text-gray-600 hover:text-gray-900 transition-colors">
               <Mail size={20} />
             </a>
           </div>

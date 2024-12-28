@@ -1,5 +1,4 @@
-import React from 'react';
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail } from "lucide-react";
 
 export function Footer() {
   return (
@@ -7,12 +6,12 @@ export function Footer() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
-            <p className="text-lg font-semibold">Your Name</p>
-            <p className="text-gray-400">Full Stack Developer</p>
+            <p className="text-lg font-semibold">Mohi</p>
+            <p className="text-gray-400">Data Enthusiast</p>
           </div>
           <div className="flex items-center gap-6">
             <a
-              href="https://github.com"
+              href="https://github.com/mohi-m"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-white transition-colors"
@@ -20,7 +19,7 @@ export function Footer() {
               <Github size={24} />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/mohi-madhu/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-white transition-colors"
@@ -28,7 +27,7 @@ export function Footer() {
               <Linkedin size={24} />
             </a>
             <a
-              href="mailto:your.email@example.com"
+              href="mailto:mohi2@illinois.edu"
               className="text-gray-400 hover:text-white transition-colors"
             >
               <Mail size={24} />
@@ -36,7 +35,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-8 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Your Name. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Mohi. All rights reserved.</p>
         </div>
       </div>
     </footer>

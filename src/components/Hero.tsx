@@ -6,10 +6,10 @@ export function Hero() {
     <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
         <h1 className="text-5xl sm:text-6xl font-bold text-gray-900 mb-6">
-          Hi, I'm <span className="text-indigo-600">Your Name</span>
+          Hi, I'm <span className="text-indigo-600">Mohi</span>
         </h1>
         <p className="text-xl text-gray-600 mb-8">
-          Full Stack Developer | Open Source Enthusiast | Tech Writer
+          Data Enthusiast | Ex- BlackRock | Graduate Student at UIUC
         </p>
         <div className="flex justify-center gap-4">
           <a
