@@ -6,7 +6,7 @@
   "homepage": "https://mohi-m.github.io/mohi-m.github.io",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "vite build && vite-gh-pages",
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
