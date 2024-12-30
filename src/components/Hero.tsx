@@ -9,7 +9,7 @@ export function Hero() {
           Hi, I'm <span className="text-indigo-600">Mohi</span>
         </h1>
         <p className="text-xl text-gray-600 mb-8">
-          Data Enthusiast | Ex- BlackRock | Graduate Student at UIUC
+          Data Enthusiast | Graduate Student at UIUC | Ex - Data Engineer @ BlackRock 
         </p>
         <div className="flex justify-center gap-4">
           <a

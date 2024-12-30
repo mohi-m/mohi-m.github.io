@@ -4,7 +4,7 @@ import { Github, ExternalLink } from 'lucide-react';
 const projects = [
   {
     title: 'Project One',
-    description: 'A full-stack web application built with React and Node.js',
+    description: 'Placeholder project description',
     image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97',
     github: 'https://github.com',
     live: 'https://example.com',
@@ -12,15 +12,15 @@ const projects = [
   },
   {
     title: 'Project Two',
-    description: 'Mobile-first e-commerce platform',
+    description: 'Placeholder project description',
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f',
     github: 'https://github.com',
     live: 'https://example.com',
-    tags: ['React Native', 'Firebase', 'Stripe']
+    tags: ['Scala', 'Java', 'Spark', 'Haddop']
   },
   {
     title: 'Project Three',
-    description: 'AI-powered data visualization dashboard',
+    description: 'Placeholder project description',
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71',
     github: 'https://github.com',
     live: 'https://example.com',
@@ -32,7 +32,7 @@ export function Projects() {
   return (
     <section id="projects" className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <h2 className="text-4xl font-bold text-center text-gray-900 mb-12">Projects</h2>
+        <h2 className="text-4xl font-bold text-center text-gray-900 mb-12">Projects [WIP]</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
