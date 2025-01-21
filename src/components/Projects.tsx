@@ -1,31 +1,23 @@
-import React from 'react';
-import { Github, ExternalLink } from 'lucide-react';
+import React from "react";
+import { Github, ExternalLink } from "lucide-react";
 
 const projects = [
   {
-    title: 'Project One',
-    description: 'Placeholder project description',
-    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97',
-    github: 'https://github.com',
-    live: 'https://example.com',
-    tags: ['React', 'Node.js', 'MongoDB']
+    title: "E-Cigarette Policy Analysis",
+    description:
+      "Developed predictive models using ARIMA and Logistic Regression on 150k+ rows of e-cigarette legislation data in R, achieving 8% MAPE in forecasting policy stringency trends and 80% classification accuracy in identifying high-risk regions for policy violations. Visualized actionable insights with ggplot2 to support public health improvements.",
+    image: "images/Arima_proj.png",
+    github: "https://github.com/mohi-m/E-Cigarette_Regulations_Analysis",
+    tags: ["R", "ggplot", "ARIMA", "Logistic Regression"],
   },
   {
-    title: 'Project Two',
-    description: 'Placeholder project description',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f',
-    github: 'https://github.com',
-    live: 'https://example.com',
-    tags: ['Scala', 'Java', 'Spark', 'Haddop']
+    title: "Energy and Emissions Analysis",
+    description:
+      "Processed and analyzed the Economist Intelligence Unit's Energy dataset (2000–2024) using Tableau Prep, enabling structured insights into emissions and energy consumption. Designed interactive Tableau dashboards to compare renewable and non-renewable energy adoption, showcasing energy transitions across major economies.",
+    image: "images/tableau_proj.png",
+    github: "https://github.com/mohi-m",
+    tags: ["Tableau", "Tableau Prep", "ETL"],
   },
-  {
-    title: 'Project Three',
-    description: 'Placeholder project description',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71',
-    github: 'https://github.com',
-    live: 'https://example.com',
-    tags: ['Python', 'TensorFlow', 'D3.js']
-  }
 ];
 
 export function Projects() {
@@ -35,21 +27,17 @@ export function Projects() {
         <h2 className="text-4xl font-bold text-center text-gray-900 mb-12">Projects [WIP]</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-48 object-cover"
-              />
+            <div
+              key={index}
+              className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+            >
+              <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">{project.title}</h3>
                 <p className="text-gray-600 mb-4">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag, tagIndex) => (
-                    <span
-                      key={tagIndex}
-                      className="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm"
-                    >
+                    <span key={tagIndex} className="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm">
                       {tag}
                     </span>
                   ))}
