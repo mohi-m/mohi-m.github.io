@@ -1,12 +1,11 @@
-import React from "react";
-import { Github, ExternalLink } from "lucide-react";
+import { Github } from "lucide-react";
 
 const projects = [
   {
     title: "E-Cigarette Policy Analysis",
     description:
       "Developed predictive models using ARIMA and Logistic Regression on 150k+ rows of e-cigarette legislation data in R, achieving 8% MAPE in forecasting policy stringency trends and 80% classification accuracy in identifying high-risk regions for policy violations. Visualized actionable insights with ggplot2 to support public health improvements.",
-    image: "images/Arima_proj.png",
+    image: "https://raw.githubusercontent.com/mohi-m/mohi-m.github.io/main/src/images/Arima_proj.png",
     github: "https://github.com/mohi-m/E-Cigarette_Regulations_Analysis",
     tags: ["R", "ggplot", "ARIMA", "Logistic Regression"],
   },
@@ -14,7 +13,7 @@ const projects = [
     title: "Energy and Emissions Analysis",
     description:
       "Processed and analyzed the Economist Intelligence Unit's Energy dataset (2000–2024) using Tableau Prep, enabling structured insights into emissions and energy consumption. Designed interactive Tableau dashboards to compare renewable and non-renewable energy adoption, showcasing energy transitions across major economies.",
-    image: "images/tableau_proj.png",
+    image: "https://raw.githubusercontent.com/mohi-m/mohi-m.github.io/main/src/images/tableau_proj.png",
     github: "https://github.com/mohi-m",
     tags: ["Tableau", "Tableau Prep", "ETL"],
   },
