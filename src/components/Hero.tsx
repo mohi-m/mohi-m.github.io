@@ -2,7 +2,7 @@ import { ArrowDown } from 'lucide-react';
 
 export function Hero() {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-50">
+    <section id="home" className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
         <h1 className="text-5xl sm:text-6xl font-bold text-gray-900 mb-6">
           Hi, I'm <span className="text-indigo-600">Mohi</span>

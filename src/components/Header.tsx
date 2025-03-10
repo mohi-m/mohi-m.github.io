@@ -9,13 +9,13 @@ export function Header() {
             Portfolio
           </a>
           <div className="flex items-center gap-10">
-            <a href="#experience" className="text-gray-600 hover:text-gray-900 transition-colors">
+            <a href="#experience" className="text-gray-600 hover:text-gray-900 transition-colors font-bold">
               Experience
             </a>
-            <a href="#projects" className="text-gray-600 hover:text-gray-900 transition-colors">
+            <a href="#projects" className="text-gray-600 hover:text-gray-900 transition-colors font-bold">
               Projects
             </a>
-            <a href="#contact" className="text-gray-600 hover:text-gray-900 transition-colors">
+            <a href="#contact" className="text-gray-600 hover:text-gray-900 transition-colors font-bold">
               Contact
             </a>
           </div>
