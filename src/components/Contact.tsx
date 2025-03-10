@@ -2,11 +2,9 @@ import { Mail, Phone, MapPin } from "lucide-react";
 
 export function Contact() {
   return (
-    <section id="contact" className="py-20 bg-gray-50">
+    <section id="contact" className="py-20 bg-gray-200">
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
-        <h2 className="text-4xl font-bold text-center text-gray-900 mb-12">
-          Get in Touch
-        </h2>
+        <h2 className="text-4xl font-bold text-center text-gray-900 mb-12">Get in Touch</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
             <h3 className="text-xl font-semibold mb-4">Contact Information</h3>
@@ -27,10 +25,7 @@ export function Contact() {
           </div>
           <form className="space-y-4">
             <div>
-              <label
-                htmlFor="name"
-                className="block text-sm font-medium text-gray-700 mb-1"
-              >
+              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
                 Name
               </label>
               <input
@@ -40,10 +35,7 @@ export function Contact() {
               />
             </div>
             <div>
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-gray-700 mb-1"
-              >
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
                 Email
               </label>
               <input
@@ -53,10 +45,7 @@ export function Contact() {
               />
             </div>
             <div>
-              <label
-                htmlFor="message"
-                className="block text-sm font-medium text-gray-700 mb-1"
-              >
+              <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
                 Message
               </label>
               <textarea
