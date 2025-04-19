@@ -9,6 +9,7 @@ interface TimelineItem {
   duration: string;
   description: string[];
   icon: LucideIcon;
+  logo: string;
 }
 
 interface TimelineSectionProps {
@@ -20,14 +21,22 @@ const container = {
   show: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.6,
+      duration: 0.8,
     },
   },
 };
 
 const item = {
   hidden: { opacity: 0, x: -20 },
-  show: { opacity: 1, x: 0 },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+    },
+  },
 };
 
 const TimelineSection = ({ items }: TimelineSectionProps) => (
@@ -36,7 +45,7 @@ const TimelineSection = ({ items }: TimelineSectionProps) => (
       variants={container}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true }}
+      viewport={{ once: false, amount: 0.3 }}
       className="space-y-8"
     >
       {items.map((exp, index) => (
@@ -48,7 +57,7 @@ const TimelineSection = ({ items }: TimelineSectionProps) => (
               </div>
               <motion.div
                 whileHover={{ scale: 1.2, rotate: 360 }}
-                transition={{ duration: 0.5 }}
+                transition={{ duration: 0.8 }}
                 className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-dark-300 border-2 border-secondary-400 flex items-center justify-center text-secondary-400"
               >
                 <exp.icon size={16} />
@@ -56,21 +65,28 @@ const TimelineSection = ({ items }: TimelineSectionProps) => (
             </div>
 
             <div className="md:col-span-11 bg-dark-300/30 backdrop-blur-sm rounded-xl p-6 hover:shadow-2xl hover:shadow-secondary-500/20 transition-all duration-300">
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                <div>
-                  <h3 className="text-xl font-bold text-light">{exp.title}</h3>
-                  <p className="text-secondary-300 font-semibold">{exp.company}</p>
+              <div className="flex flex-col md:flex-row gap-6">
+                <div className="w-full md:w-1/4">
+                  <img src={exp.logo} alt={exp.company} className="w-full h-auto object-contain max-h-40" />
                 </div>
-                <div className="text-right">
-                  <p className="text-primary-200">{exp.location}</p>
-                  <p className="text-primary-300">{exp.duration}</p>
+                <div className="w-full md:w-3/4">
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                    <div>
+                      <h3 className="text-xl font-bold text-light">{exp.title}</h3>
+                      <p className="text-secondary-300 font-semibold">{exp.company}</p>
+                    </div>
+                    <div className="text-right mt-2 md:mt-0">
+                      <p className="text-primary-200">{exp.location}</p>
+                      <p className="text-primary-300">{exp.duration}</p>
+                    </div>
+                  </div>
+                  <ul className="list-disc list-inside space-y-2 text-primary-200">
+                    {exp.description.map((point, idx) => (
+                      <li key={idx}>{point}</li>
+                    ))}
+                  </ul>
                 </div>
               </div>
-              <ul className="list-disc list-inside space-y-2 text-primary-200">
-                {exp.description.map((point, idx) => (
-                  <li key={idx}>{point}</li>
-                ))}
-              </ul>
             </div>
           </div>
         </motion.div>
@@ -85,27 +101,29 @@ export function Education() {
       type: "education",
       title: "MS in Information Management",
       company: "University of Illinois Urbana-Champaign",
-      location: "Illinois, USA",
-      duration: "Aug 2023 - Present",
+      location: "Champaign, IL",
+      duration: "Aug 2024 - Present",
       description: [
+        "GPA: 4.0/4.0",
         "Specializing in Data Science and Analytics",
-        "Relevant Coursework: Data Mining, Statistical Learning, Machine Learning",
-        "GPA: 3.9/4.0",
+        "Relevant Coursework: Data Mining, Machine Learning, NLP, Data Visualization",
       ],
       icon: GraduationCap,
+      logo: "/images/education/UIUC_logo.png",
     },
     {
       type: "education",
-      title: "B.Tech in Electronics & Communication",
+      title: "B.Tech in Electrical & Computer Engineering",
       company: "Manipal Institute of Technology",
       location: "Manipal, India",
       duration: "Aug 2017 - Jul 2021",
       description: [
         "GPA: 3.56/4.0",
-        "Specialization in Signal Processing and Communication",
-        "Member of Formula Manipal Racing Team",
+        "Specialization in Embedded Systems",
+        "Head of Formula Manipal Electric (FSAE Team)",
       ],
       icon: GraduationCap,
+      logo: "/images/education/MAHE_logo.jpg",
     },
   ];
 
@@ -115,7 +133,8 @@ export function Education() {
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false, amount: 0.5 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-4xl font-bold text-center text-light mb-12"
         >
           Education
