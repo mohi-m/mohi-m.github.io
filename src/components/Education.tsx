@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Briefcase, LucideIcon } from "lucide-react";
+import { GraduationCap, LucideIcon } from "lucide-react";
 
 interface TimelineItem {
   type: string;
@@ -12,7 +12,6 @@ interface TimelineItem {
 }
 
 interface TimelineSectionProps {
-  title: string;
   items: TimelineItem[];
 }
 
@@ -31,17 +30,8 @@ const item = {
   show: { opacity: 1, x: 0 },
 };
 
-const TimelineSection = ({ title, items }: TimelineSectionProps) => (
+const TimelineSection = ({ items }: TimelineSectionProps) => (
   <div className="mb-20">
-    <motion.h3
-      initial={{ opacity: 0, y: -20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      className="text-3xl font-bold text-center text-light mb-12"
-    >
-      {title}
-    </motion.h3>
-
     <motion.div
       variants={container}
       initial="hidden"
@@ -89,38 +79,38 @@ const TimelineSection = ({ title, items }: TimelineSectionProps) => (
   </div>
 );
 
-export function Experience() {
-  const experiences: TimelineItem[] = [
+export function Education() {
+  const education: TimelineItem[] = [
     {
-      type: "work",
-      title: "Data Engineer",
-      company: "BlackRock",
-      location: "Gurgaon, India",
-      duration: "Jan 2024 - Jul 2024",
+      type: "education",
+      title: "MS in Information Management",
+      company: "University of Illinois Urbana-Champaign",
+      location: "Illinois, USA",
+      duration: "Aug 2023 - Present",
       description: [
-        "Built telemetry logging framework using Snowflake, enabling data trend analysis via PowerBI dashboard",
-        "Developed mini-batch application for portfolio proposals using Apache Kafka and Cassandra",
-        "Improved Cloud VM load by over 30% through optimization",
+        "Specializing in Data Science and Analytics",
+        "Relevant Coursework: Data Mining, Statistical Learning, Machine Learning",
+        "GPA: 3.9/4.0",
       ],
-      icon: Briefcase,
+      icon: GraduationCap,
     },
     {
-      type: "work",
-      title: "Data Engineer",
-      company: "BlackRock",
-      location: "Gurgaon, India",
-      duration: "Jul 2021 - Dec 2023",
+      type: "education",
+      title: "B.Tech in Electronics & Communication",
+      company: "Manipal Institute of Technology",
+      location: "Manipal, India",
+      duration: "Aug 2017 - Jul 2021",
       description: [
-        "Developed Spark-based analytics solution processing 14M+ portfolios",
-        "Created customized JSON extract generation system for portfolio analytics",
-        "Improved pipeline efficiency reducing production cycle time by 20%",
+        "GPA: 3.56/4.0",
+        "Specialization in Signal Processing and Communication",
+        "Member of Formula Manipal Racing Team",
       ],
-      icon: Briefcase,
+      icon: GraduationCap,
     },
   ];
 
   return (
-    <section id="experience" className="py-20 bg-gradient-to-br from-dark-200 to-dark-100">
+    <section id="education" className="py-20 bg-gradient-to-br from-dark-100 via-dark-200 to-dark-300">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
@@ -128,10 +118,10 @@ export function Experience() {
           viewport={{ once: true }}
           className="text-4xl font-bold text-center text-light mb-12"
         >
-          Work Experience
+          Education
         </motion.h2>
 
-        <TimelineSection title="Experience" items={experiences} />
+        <TimelineSection items={education} />
       </div>
     </section>
   );
