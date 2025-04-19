@@ -1,51 +1,24 @@
 import { ArrowDown } from "lucide-react";
-import { motion } from "framer-motion";
-
-const FloatingShapes = () => {
-  const shapes = [
-    { size: "w-64 h-64", color: "bg-secondary-900/10", blur: "blur-3xl", left: "10%", top: "20%" },
-    { size: "w-96 h-96", color: "bg-primary-900/10", blur: "blur-3xl", left: "60%", top: "10%" },
-    { size: "w-72 h-72", color: "bg-secondary-800/10", blur: "blur-3xl", left: "30%", top: "50%" },
-  ];
-
-  return (
-    <div className="absolute inset-0 overflow-hidden">
-      {shapes.map((shape, index) => (
-        <motion.div
-          key={index}
-          className={`absolute ${shape.size} ${shape.color} ${shape.blur} rounded-full`}
-          initial={{ x: shape.left, y: shape.top }}
-          animate={{
-            y: [shape.top, `calc(${shape.top} + 30px)`, shape.top],
-          }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            repeatType: "reverse",
-            delay: index * 0.5,
-          }}
-        />
-      ))}
-    </div>
-  );
-};
+import { motion, useScroll, useTransform } from "framer-motion";
 
 export function Hero() {
+  const { scrollY } = useScroll();
+  const backgroundY = useTransform(scrollY, [0, 1000], [0, 300]);
+
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       <motion.div
-        className="absolute inset-0 bg-[url('/images/code-bg.jpg')] bg-cover bg-center bg-no-repeat opacity-20"
+        className="absolute inset-0 bg-[url('/images/background/image.png')] bg-fixed bg-cover bg-center bg-no-repeat blur-sm"
         initial={{ opacity: 0 }}
-        animate={{ opacity: 0.2 }}
-        transition={{ duration: 1 }}
+        animate={{ opacity: 1 }}
+        style={{ y: backgroundY }}
+        transition={{ duration: 0.8 }}
       />
-      <motion.div className="absolute inset-0 bg-gradient-to-br from-dark-bg via-dark-100 to-dark-200" />
-      <FloatingShapes />
 
       {/* Main Content */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10 bg-dark-bg/0 p-8 rounded-lg">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-          <h1 className="text-5xl sm:text-6xl font-bold text-light mb-6">
+          <h1 className="text-5xl sm:text-6xl font-bold text-light mb-6 ">
             Hi, I'm <span className="text-secondary-400">Mohi</span>
           </h1>
         </motion.div>

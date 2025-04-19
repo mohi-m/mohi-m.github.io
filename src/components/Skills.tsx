@@ -91,7 +91,7 @@ export function Skills() {
                 {skill.items.map((item, idx) => (
                     <div key={idx} className="flex items-center gap-3 relative group">
                     <img
-                      src={`public/images/skills/${item.toLowerCase().replace(/\s+/g, "-")}.png`}
+                      src={`/images/skills/${item.toLowerCase().replace(/\s+/g, "-")}.png`}
                       alt={item}
                       className="w-20 h-20 object-contain group-hover:scale-150 transition-transform duration-200"
                     />

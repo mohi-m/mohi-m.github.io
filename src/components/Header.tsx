@@ -18,7 +18,7 @@ export function Header() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`fixed w-full backdrop-blur-md z-50 transition-all duration-300 ${
+      className={`fixed w-full z-50 transition-all duration-300 ${
         isScrolled ? "bg-dark-100/95 shadow-lg" : "bg-transparent"
       }`}
     >
