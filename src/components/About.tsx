@@ -33,8 +33,9 @@ export function About() {
             <motion.p {...fadeInUp} className="text-xl text-primary-200 leading-relaxed text-center mb-8">
               I'm a <span className="font-semibold text-secondary-400">Data Engineer</span> with 3+ years of experience
               at
-              <span className="font-semibold text-secondary-400"> BlackRock</span>, now sharpening my skills in Data
-              Science through a Master's at <span className="font-semibold text-secondary-400">UIUC</span>.
+              <span className="font-semibold text-secondary-400"> BlackRock</span>, now sharpening my skills in{" "}
+              <span className="font-semibold text-secondary-400">Data Science </span>
+              through a Master's at <span className="font-semibold text-secondary-400">UIUC</span>.
             </motion.p>
           </motion.div>
 

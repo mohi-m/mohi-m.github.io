@@ -18,8 +18,8 @@ export function Hero() {
       {/* Main Content */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10 bg-dark-bg/0 p-8 rounded-lg">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-          <h1 className="text-5xl sm:text-6xl font-bold text-light mb-6 ">
-            Hi, I'm <span className="text-secondary-400">Mohi</span>
+          <h1 className="text-5xl sm:text-6xl font-extrabold text-white mb-6 tracking-tight drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">
+            Hi, I'm <span className="text-secondary-400 drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">Mohi</span>
           </h1>
         </motion.div>
 
@@ -27,9 +27,9 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-xl text-primary-200 mb-8"
+          className="text-xl sm:text-2xl font-semibold text-white mb-8 drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)]"
         >
-          Data Enthusiast | Graduate Student at UIUC | Ex - Data Engineer @ BlackRock
+          Data Science @ UIUC | Ex - Data Engineer @ BlackRock
         </motion.p>
 
         <motion.div
@@ -42,7 +42,7 @@ export function Hero() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             href="#projects"
-            className="px-6 py-3 bg-secondary-600 text-light rounded-lg hover:bg-secondary-700 transition-colors"
+            className="px-6 py-3 bg-secondary-600 text-white font-semibold rounded-lg hover:bg-secondary-700 transition-colors shadow-lg"
           >
             View My Work
           </motion.a>
@@ -50,7 +50,7 @@ export function Hero() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             href="#contact"
-            className="px-6 py-3 border-2 border-secondary-500 text-light rounded-lg hover:bg-secondary-500/10 transition-colors"
+            className="px-6 py-3 border-2 border-secondary-500 text-white font-semibold rounded-lg hover:bg-secondary-500/10 transition-colors shadow-lg"
           >
             Contact Me
           </motion.a>
