@@ -18,8 +18,8 @@ export function Contact() {
     {
       icon: Linkedin,
       label: "LinkedIn",
-      value: "linkedin.com/in/mohi-madhu",
-      href: "https://www.linkedin.com/in/mohi-madhu/",
+      value: "linkedin.com/in/mohi-m",
+      href: "https://www.linkedin.com/in/mohi-m/",
     },
   ];
 
@@ -29,7 +29,7 @@ export function Contact() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           className="text-center mb-12"
         >
           <h2 className="text-4xl font-bold text-light mb-4">Get in Touch</h2>
@@ -39,7 +39,8 @@ export function Contact() {
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
+          viewport={{ once: false, amount: 0.2 }}
+          transition={{ duration: 0.5 }}
           className="grid grid-cols-1 md:grid-cols-3 gap-8"
         >
           {contacts.map((contact, index) => (

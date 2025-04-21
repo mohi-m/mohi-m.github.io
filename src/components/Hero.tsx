@@ -8,7 +8,7 @@ export function Hero() {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       <motion.div
-        className="absolute inset-0 bg-[url('/images/background/image.png')] bg-fixed bg-cover bg-center bg-no-repeat blur-sm"
+        className="absolute inset-0 bg-[url('/images/background/image.png')] bg-fixed bg-cover bg-center bg-no-repeat blur-sm brightness-50"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         style={{ y: backgroundY }}
