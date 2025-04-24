@@ -11,6 +11,7 @@ A modern, responsive portfolio website built with React, TypeScript, and Tailwin
 - Smooth scroll animations using Framer Motion
 - Optimized performance
 
+
 ## 🛠️ Tech Stack
 
 - **Framework:** React with TypeScript

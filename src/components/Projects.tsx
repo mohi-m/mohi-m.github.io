@@ -59,6 +59,16 @@ const projects = [
     tags: ["Python", "TensorFlow", "Keras", "OpenCV", "NumPy", "Pandas", "Haar Cascade"],
   },
   {
+    title: "💻 Personal Portfolio Website",
+    description: [
+      "Designed and developed a modern, responsive portfolio using React, TypeScript, and TailwindCSS with smooth Framer Motion animations and dark mode support.",
+      "Set up automated CI/CD with GitHub Actions for seamless deployment to GitHub Pages.",
+    ],
+    image: "/images/projects/portfolio_website.png",
+    github: "https://github.com/mohi-m/mohi-m.github.io",
+    tags: ["React", "TypeScript", "TailwindCSS", "Framer Motion", "Vite", "GitHub Actions"],
+  },
+  {
     title: "🚭 E-Cigarette Policy Analysis",
     description: [
       "Built predictive models on 150k+ rows of e-cigarette legislation data, achieving 8% MAPE in forecasting policy stringency and 80% accuracy in identifying high-risk regions.",
