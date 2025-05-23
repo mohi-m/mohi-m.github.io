@@ -55,26 +55,6 @@ export function Hero() {
             Contact Me
           </motion.a>
         </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-16"
-        >
-          <motion.div
-            animate={{
-              y: [0, 10, 0],
-            }}
-            transition={{
-              duration: 1.5,
-              repeat: Infinity,
-              repeatType: "reverse",
-            }}
-          >
-            <ArrowDown className="mx-auto text-primary-300" size={24} />
-          </motion.div>
-        </motion.div>
       </div>
     </section>
   );

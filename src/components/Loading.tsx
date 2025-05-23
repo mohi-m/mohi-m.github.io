@@ -34,7 +34,7 @@ export function Loading() {
           }}
           className="text-xl text-primary-200"
         >
-          Loading...
+          Loading
         </motion.h2>
       </div>
     </motion.div>
