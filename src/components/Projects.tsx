@@ -59,6 +59,16 @@ const projects = [
     tags: ["Python", "TensorFlow", "Keras", "OpenCV", "NumPy", "Pandas", "Haar Cascade"],
   },
   {
+    title: "🌍 Energy Generation Overview in Top Economies",
+    description: [
+      "Cleaned and preprocessed the EIU Energy dataset (2000–2024) using Tableau Prep to enable structured analysis.",
+      "Built interactive dashboards in Tableau to visualize energy consumption, emissions, and renewable vs. non-renewable transitions across top global economies.",
+    ],
+    image: "/images/projects/energy_dashboard.png",
+    github: "https://github.com/mohi-m/energy-dashboard",
+    tags: ["Tableau", "Tableau Prep", "ETL"],
+  },
+  {
     title: "💻 Personal Portfolio Website",
     description: [
       "Designed and developed a modern, responsive portfolio using React, TypeScript, and TailwindCSS with smooth Framer Motion animations and dark mode support.",
@@ -77,16 +87,6 @@ const projects = [
     image: "/images/projects/Arima_proj.png",
     github: "https://github.com/mohi-m/E-Cigarette_Regulations_Analysis",
     tags: ["R", "Time-Series Analysis", "ARIMA", "Logistic Regression", "ggplot2"],
-  },
-  {
-    title: "🌍 Emissions & Energy Analysis in Global Economies",
-    description: [
-      "Cleaned and preprocessed the EIU Energy dataset (2000–2024) using Tableau Prep to enable structured analysis.",
-      "Built interactive dashboards in Tableau to visualize energy consumption, emissions, and renewable vs. non-renewable transitions across top global economies.",
-    ],
-    image: "/images/projects/energy_dashboard.png",
-    github: "https://github.com/mohi-m",
-    tags: ["Tableau", "Tableau Prep", "ETL"],
   },
   {
     title: "🤟 SignBridge: Speech-to-ISL/ASL Gesture Conversion",
