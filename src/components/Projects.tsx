@@ -64,7 +64,7 @@ const projects = [
       "Cleaned and preprocessed the EIU Energy dataset (2000–2024) using Tableau Prep to enable structured analysis.",
       "Built interactive dashboards in Tableau to visualize energy consumption, emissions, and renewable vs. non-renewable transitions across top global economies.",
     ],
-    image: "/images/projects/energy_dashboard.png",
+    image: "/images/projects/tableau_proj.png",
     github: "https://github.com/mohi-m/energy-dashboard",
     tags: ["Tableau", "Tableau Prep", "ETL"],
   },
