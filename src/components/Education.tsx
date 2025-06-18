@@ -128,7 +128,7 @@ export function Education() {
   ];
 
   return (
-    <section id="education" className="py-20 bg-gradient-to-br from-dark-100 via-dark-200 to-dark-300">
+    <section id="education" className="py-20 bg-black">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <motion.h2
           initial={{ opacity: 0, y: -20 }}

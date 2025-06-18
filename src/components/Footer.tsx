@@ -7,7 +7,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="py-8 bg-dark-100">
+    <footer className="py-8 bg-black">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0">
           <motion.button

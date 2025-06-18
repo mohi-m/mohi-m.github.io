@@ -57,12 +57,12 @@ export function Skills() {
   };
 
   return (
-    <section id="skills" className="py-20 bg-gradient-to-br from-dark-200 via-dark-100 to-dark-200">
+    <section id="skills" className="py-20 bg-black">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <motion.h2
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0.5, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }}
+          viewport={{ once: true }}
           className="text-4xl font-bold text-center text-light mb-12"
         >
           Skills
@@ -89,7 +89,7 @@ export function Skills() {
               </div>
               <div className="flex flex-wrap gap-7 items-center">
                 {skill.items.map((item, idx) => (
-                    <div key={idx} className="flex items-center gap-3 relative group">
+                  <div key={idx} className="flex items-center gap-3 relative group">
                     <img
                       src={`/images/skills/${item.toLowerCase().replace(/\s+/g, "-")}.png`}
                       alt={item}
@@ -98,7 +98,7 @@ export function Skills() {
                     <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block bg-dark-300 text-light text-xs rounded-md px-2 py-1 shadow-lg">
                       {item}
                     </div>
-                    </div>
+                  </div>
                 ))}
               </div>
             </motion.div>

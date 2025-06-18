@@ -19,7 +19,7 @@ export function Header() {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
       className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? "bg-dark-100/95 shadow-lg" : "bg-transparent"
+        isScrolled ? "bg-black/95 shadow-lg" : "bg-transparent"
       }`}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4">

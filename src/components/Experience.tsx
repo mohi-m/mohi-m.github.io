@@ -154,7 +154,7 @@ export function Experience() {
   ];
 
   return (
-    <section id="experience" className="py-20 bg-gradient-to-br from-dark-200 to-dark-100">
+    <section id="experience" className="py-20 bg-black">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <motion.h2
           initial={{ opacity: 0, y: -20 }}

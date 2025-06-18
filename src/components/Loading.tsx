@@ -6,7 +6,7 @@ export function Loading() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 z-50 flex items-center justify-center bg-dark-bg"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black"
     >
       <div className="text-center">
         <motion.div

@@ -104,7 +104,7 @@ export function Projects() {
   const [selectedImage, setSelectedImage] = useState<{ url: string; title: string } | null>(null);
 
   return (
-    <section id="projects" className="py-20 bg-gradient-to-br from-dark-100 to-dark-200">
+    <section id="projects" className="py-20 bg-black">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <motion.h2
           initial={{ opacity: 0, y: -20 }}

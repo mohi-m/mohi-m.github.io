@@ -8,7 +8,7 @@ export function About() {
   };
 
   return (
-    <section id="about" className="py-20 bg-gradient-to-br from-dark-100 via-dark-200 to-dark-300">
+    <section id="about" className="py-20 bg-black text-light">
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
@@ -17,7 +17,7 @@ export function About() {
           viewport={{ once: false }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl font-bold text-light mb-4 inline-block">About Me</h2>
+          <h2 className="text-4xl font-bold text-center text-light mb-12">About Me</h2>
         </motion.div>
 
         <div className="space-y-8">

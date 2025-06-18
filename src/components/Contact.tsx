@@ -24,7 +24,7 @@ export function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-dark-200 via-dark-100 to-dark-300">
+    <section id="contact" className="py-20 bg-black">
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
