@@ -46,11 +46,10 @@ export function About() {
             viewport={{ once: false }}
           >
             <motion.p {...fadeInUp} className="text-xl text-primary-200 leading-relaxed text-center mb-8">
-              I specialize in building scalable data pipelines and analytics systems that turn messy data into powerful
-              insights. Always curious, I'm driven by solving real-world problems with
-              <span className="text-secondary-400"> clean code</span>,
-              <span className="text-secondary-400"> clever design</span>, and
-              <span className="text-secondary-400"> cutting-edge tools</span>.
+              My interests lie in Machine Learning, NLP, and building Scalable Systems that make data more useful. I'm
+              currently exploring topics like <span className="text-secondary-400">LLM Alignment</span> and
+              <span className="text-secondary-400"> Causal Inferences</span>, and always enjoy working on projects that
+              blend research and real-world impact.
             </motion.p>
           </motion.div>
         </div>
