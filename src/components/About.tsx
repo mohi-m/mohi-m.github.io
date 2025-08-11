@@ -46,7 +46,7 @@ export function About() {
             viewport={{ once: false }}
           >
             <motion.p {...fadeInUp} className="text-xl text-primary-200 leading-relaxed text-center mb-8">
-              My interests lie in Machine Learning, NLP, and building Scalable Systems that make data more useful. I'm
+              My interests lie in Machine Learning, LLMs, and building Scalable Systems that make data more useful. I'm
               currently exploring topics like <span className="text-secondary-400">LLM Alignment</span> and
               <span className="text-secondary-400"> Causal Inferences</span>, and always enjoy working on projects that
               blend research and real-world impact.

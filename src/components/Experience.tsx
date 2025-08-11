@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Briefcase, Car, LucideIcon } from "lucide-react";
+import { Briefcase, Car, LucideIcon, School } from "lucide-react";
 
 interface TimelineItem {
   type: string;
@@ -99,6 +99,33 @@ export function Experience() {
   const experiences: TimelineItem[] = [
     {
       type: "work",
+      title: "Teaching Assistant",
+      company: "School of Information Sciences (IS 525: Data Warehousing & BI)",
+      location: "Champaign, IL",
+      duration: "Aug 2025 - Present",
+      description: [
+        "Assisted in delivering graduate-level data warehousing course for 100+ students, providing technical support for ETL processes using Apache Airflow and SQL database management",
+        "Guided students in big data technologies including Hadoop ecosystems, NoSQL databases, and modern data lake architectures",
+      ],
+      icon: School,
+      logo: "/images/experience/iSchool.png",
+    },
+    {
+      type: "work",
+      title: "Research Assistant",
+      company: "School of Information Sciences",
+      location: "Champaign, IL",
+      duration: "May 2025 - Present",
+      description: [
+        "Co-authored an HCI research paper (under review) titled “Unpacking Parent Concerns and Controls on Children’s Generative AI Tools,” involving large-scale qualitative analysis of over 450 Reddit posts using thematic content analysis and GPT-4o-assisted data filtering; findings inform design principles for family-centered GenAI systems.",
+        "Leading ongoing research on LLM alignment and personalization in the context of child-AI interaction, specifically aligning chatbot behavior to mirror parental communication styles and values.",
+        "Experimenting with test-time alignment techniques (e.g., sampling based and guided decoding) and automatic prompt engineering pipelines using the latest OpenAI models (GPT-5 and GPT-4o).",
+      ],
+      icon: School,
+      logo: "/images/experience/iSchool.png",
+    },
+    {
+      type: "work",
       title: "Data Engineer - II",
       company: "BlackRock",
       location: "Gurgaon, India",
@@ -163,7 +190,7 @@ export function Experience() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-4xl font-bold text-center text-light mb-12"
         >
-          Work Experience
+          Experiences
         </motion.h2>
 
         <TimelineSection items={experiences} />

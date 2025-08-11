@@ -113,7 +113,7 @@ export function Projects() {
           transition={{ duration: 0.3 }}
           className="text-4xl font-bold text-center text-light mb-12"
         >
-          Featured Projects
+          Projects
         </motion.h2>
 
         <div className="grid grid-cols-1 gap-12">
