@@ -2,6 +2,9 @@ import { Github, Linkedin, Mail } from "lucide-react";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
+// List of navigation components
+const components = ["projects", "experience", "education", "skills", "contact"];
+
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -30,10 +33,10 @@ export function Header() {
             href="#home"
             className="text-xl font-bold text-light"
           >
-            Portfolio
+            <img src="/images/M_icon.ico" alt="icon" className="h-8" />
           </motion.a>
           <div className="flex items-center gap-6">
-            {["about", "skills", "education", "experience", "projects", "contact"].map((item) => (
+            {components.map((item) => (
               <motion.a
                 key={item}
                 whileHover={{ scale: 1.05 }}
@@ -48,7 +51,7 @@ export function Header() {
           <div className="flex items-center gap-4">
             {[
               { icon: Github, href: "https://github.com/mohi-m" },
-              { icon: Linkedin, href: "https://www.linkedin.com/in/mohi-madhu/" },
+              { icon: Linkedin, href: "https://www.linkedin.com/in/mohi-m/" },
               { icon: Mail, href: "mailto:mohi2@illinois.edu" },
             ].map((item, index) => (
               <motion.a
