@@ -21,7 +21,6 @@ const container = {
   show: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.3,
       duration: 0.8,
     },
   },
@@ -45,7 +44,7 @@ const TimelineSection = ({ items }: TimelineSectionProps) => (
       variants={container}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: false, amount: 0.3 }}
+      viewport={{ once: false, amount: 0.1 }}
       className="space-y-8"
     >
       {items.map((exp, index) => (
@@ -126,7 +125,7 @@ export function Experience() {
     },
     {
       type: "work",
-      title: "Data Engineer - II",
+      title: "Software Engineer - II",
       company: "BlackRock",
       location: "Gurgaon, India",
       duration: "Jan 2024 - Jul 2024",
@@ -140,7 +139,7 @@ export function Experience() {
     },
     {
       type: "work",
-      title: "Data Engineer - I",
+      title: "Software Engineer - I",
       company: "BlackRock",
       location: "Gurgaon, India",
       duration: "Jul 2021 - Dec 2023",

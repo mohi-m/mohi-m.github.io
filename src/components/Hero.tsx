@@ -11,7 +11,6 @@ export function Hero() {
     await loadSlim(engine);
   }, []);
   const particlesLoaded = useCallback(async () => {
-    // Optional: Add any initialization after particles are loaded
   }, []);
 
   return (
@@ -118,7 +117,7 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-xl sm:text-2xl font-semibold text-white mb-8 drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)]"
         >
-          Data Science @ UIUC | Ex - Data Engineer @ BlackRock
+          Masters Student @ UIUC | Ex - Software Engineer @ BlackRock
         </motion.p>
 
         <motion.div
