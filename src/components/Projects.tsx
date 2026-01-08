@@ -39,6 +39,36 @@ function ImageModal({
 
 const projects = [
   {
+    title: "🎓 UIUC Semester Planner",
+    description: [
+      "Designed and developed a production-ready full-stack web application, implementing RESTful APIs, schema validation, authentication, and cloud deployment to support personalized academic planning workflows.",
+      "Built an AI-assisted recommendation pipeline integrating GPT-5.2 to generate and rank career-aligned course pathways, orchestrated via backend services and persisted in MongoDB for scalable, repeatable recommendations.",
+    ],
+    image: "/images/projects/uiuc_semester_planner.png",
+    github: "https://github.com/mohi-m/UIUC_Semester_Planner",
+    tags: ["Python", "FastAPI", "TypeScript", "React", "MongoDB", "Firebase Auth", "OpenAI", "Render"],
+  },
+  {
+    title: "💰 FinStream-AI",
+    description: [
+      "Engineered a production-grade AWS ETL pipeline (Airflow) to ingest, validate, and store US stock market data with idempotent tasks, data quality checks, and holiday-aware scheduling, ensuring reliable, zero-duplication loads.",
+      "Delivered integrated ML forecasting (LSTM) with MLflow tracking and a React + FastAPI analytics app for interactive charts and portfolio risk metrics; implemented automated deployment using CI/CD on GitHub Actions.",
+    ],
+    image: "/images/projects/finstream_ai.png",
+    github: "https://github.com/mohi-m/FinStream-AI",
+    tags: ["Python", "AWS", "Apache Airflow", "PostgreSQL", "MLflow", "Docker", "FastAPI", "React", "GitHub Actions"],
+  },
+  {
+    title: "🐘 Postgres Cluster Monitor",
+    description: [
+      "Built async REST API with multi-node health checks, connection pooling, and latency diagnostics; implemented pgBouncer proxy with round-robin load balancing across read replicas.",
+      "Developed real-time React dashboard with live status monitoring and integrated Locust-powered load testing UI; containerized full stack with Docker Compose for reproducible multi-environment deployments.",
+    ],
+    image: "/images/projects/postgres-cluster-monitor.png",
+    github: "https://github.com/mohi-m/Postgres-Cluster-Monitor",
+    tags: ["Python", "Azure", "FastAPI", "pgBouncer", "Locust", "Docker", "PostgreSQL", "React"],
+  },
+  {
     title: "🔐 Chat PII Anonymizer",
     description: [
       "Developed a tool to anonymize PII from Character.ai chat logs, enabling ethical analysis of AI interactions with children.",
