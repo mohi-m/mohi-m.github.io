@@ -1,6 +1,11 @@
 import { Github } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, A11y } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 // Modal component for full-size image
 function ImageModal({
@@ -135,87 +140,189 @@ export function Projects() {
 
   return (
     <section id="projects" className="py-20 bg-black">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false }}
           transition={{ duration: 0.3 }}
-          className="text-4xl font-bold text-center text-light mb-12"
+          className="text-6xl font-bold text-center text-light mb-12"
         >
           Projects
         </motion.h2>
 
-        <div className="grid grid-cols-1 gap-12">
-          {projects.map((project, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0.2, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: false, amount: 0.1 }}
-              transition={{
-                opacity: { duration: 0.5 },
-                x: { duration: 0.2 },
-                ease: "easeIn",
-              }}
-              className="group relative bg-dark-300/30 backdrop-blur-sm rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-secondary-500/20 transition-all duration-500"
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.1 }}
+          transition={{ duration: 0.5 }}
+          className="relative"
+        >
+            <Swiper
+            modules={[Navigation, Pagination, A11y]}
+            spaceBetween={30}
+            slidesPerView="auto"
+            navigation
+            pagination={{ clickable: true }}
+            loop={false}
+            className="!pb-16 group"
             >
-              <div className="grid md:grid-cols-[400px_1fr] gap-4 p-4">
-                {/* Image Section */}
+            {projects.map((project, index) => (
+              <SwiperSlide key={index} style={{ width: "auto", maxWidth: "400px" }}>
                 <motion.div
-                  className="relative h-32 w-full md:h-[275px] rounded-lg overflow-hidden cursor-pointer"
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.3 }}
-                  onClick={() => setSelectedImage({ url: project.image, title: project.title })}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: false }}
+                  transition={{ duration: 0.4 }}
+                  className="group relative bg-gradient-to-br from-dark-300/40 to-dark-300/20 backdrop-blur-md rounded-2xl overflow-hidden hover:shadow-2xl hover:shadow-secondary-500/25 transition-all duration-500 border border-secondary-500/10"
                 >
-                  <img src={project.image} alt={project.title} className="w-full h-full object-cover rounded-lg" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-dark-bg to-transparent opacity-60" />
-                </motion.div>
+                  <div className="grid md:grid-rows-[1fr_1fr] gap-6 p-2 md:p-4 max-h-[400px] md:max-h-[600px]">
+                    {/* Image Section */}
+                    <motion.div
+                      className="relative h-48 md:h-64 overflow-hidden cursor-pointer group/image"
+                      whileHover={{ scale: 1.03 }}
+                      transition={{ duration: 0.4, type: "spring", stiffness: 300 }}
+                      onClick={() => setSelectedImage({ url: project.image, title: project.title })}
+                    >
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-fill rounded-xl group-hover/image:brightness-110 transition-all duration-500"
+                      />
+                      <motion.div
+                        className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover/image:opacity-100 transition-opacity duration-300 rounded-xl"
+                        initial={{ opacity: 0 }}
+                        whileHover={{ opacity: 1 }}
+                      />
+                      <motion.div
+                        className="absolute inset-0 flex items-center justify-center opacity-0 group-hover/image:opacity-100"
+                        initial={{ opacity: 0 }}
+                        whileHover={{ opacity: 1 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <div className="text-light text-sm font-medium px-4 py-2 bg-black/50 rounded-lg backdrop-blur">
+                          Click to expand
+                        </div>
+                      </motion.div>
+                    </motion.div>
 
-                {/* Content Section */}
-                <div className="flex flex-col justify-between space-y-4">
-                  <div>
-                    <h3 className="text-xl font-bold text-light mb-3 group-hover:text-secondary-400 transition-colors">
-                      {project.title}
-                    </h3>
-                    <ul className="list-disc text-primary-200 mb-4 pl-5 space-y-1.5 text-sm">
-                      {project.description.map((point, idx) => (
-                        <li key={idx}>{point}</li>
-                      ))}
-                    </ul>
+                    {/* Content Section */}
+                    <div className="flex flex-col justify-between space-y-4">
+                      <motion.div
+                        initial={{ opacity: 0, x: 20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: false }}
+                        transition={{ duration: 0.4, delay: 0.1 }}
+                      >
+                        <h3 className="text-xl md:text-2xl font-bold flex items-center justify-center text-light mb-4 group-hover:text-secondary-300 transition-colors duration-300">
+                          {project.title}
+                        </h3>
+                        {/* ToDo: Add this in a modal window */}
+                        {/* <ul className="list-disc text-primary-200 mb-4 pl-5 space-y-2 text-sm md:text-base">
+                          {project.description.map((point, idx) => (
+                            <li key={idx} className="leading-relaxed">
+                              {point}
+                            </li>
+                          ))}
+                        </ul> */}
+                      </motion.div>
 
-                    {/* Tags */}
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {project.tags.map((tag, tagIndex) => (
-                        <span
-                          key={tagIndex}
-                          className="px-3 py-1 bg-secondary-600/20 text-secondary-300 rounded-full text-sm font-medium border border-secondary-500/30 hover:bg-secondary-600/30 transition-colors"
+                      {/* Tags */}
+                      <motion.div
+                        className="flex flex-wrap justify-center gap-2"
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: false }}
+                        transition={{ duration: 0.4, delay: 0.2 }}
+                      >
+                        {project.tags.map((tag, tagIndex) => (
+                          <motion.span
+                            key={tagIndex}
+                            whileHover={{ scale: 1.05, translateY: -2 }}
+                            className="px-3 py-1.5 bg-gradient-to-r from-secondary-600/20 to-secondary-500/10 text-secondary-300 rounded-xl text-xs md:text-sm font-medium border border-secondary-500/30 hover:border-secondary-400/50 hover:bg-secondary-600/30 transition-all duration-300"
+                          >
+                            {tag}
+                          </motion.span>
+                        ))}
+                      </motion.div>
+
+                      {/* Links */}
+                      <motion.div
+                        className="flex justify-center gap-4"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: false }}
+                        transition={{ duration: 0.4, delay: 0.3 }}
+                      >
+                        <motion.a
+                          whileHover={{ scale: 1.08, translateY: -2 }}
+                          whileTap={{ scale: 0.95 }}
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-secondary-600 to-secondary-700 text-light rounded-lg hover:from-secondary-700 hover:to-secondary-800 transition-all duration-300 text-sm font-medium shadow-lg hover:shadow-secondary-500/50"
                         >
-                          {tag}
-                        </span>
-                      ))}
+                          <Github size={18} />
+                          View Code
+                        </motion.a>
+                      </motion.div>
                     </div>
                   </div>
+                </motion.div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
 
-                  {/* Links */}
-                  <div className="flex gap-4">
-                    <motion.a
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-1.5 bg-secondary-600 text-light rounded-lg hover:bg-secondary-700 transition-colors text-sm"
-                    >
-                      <Github size={18} />
-                      View Code
-                    </motion.a>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+          {/* Custom styling for navigation and pagination */}
+          <style>{`
+            .swiper-button-next,
+            .swiper-button-prev {
+              color: #60a5fa;
+              background: rgba(15, 23, 42, 0.7);
+              backdrop-filter: blur(20px);
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              border: 1px solid rgba(96, 165, 250, 0.2);
+              transition: all 0.3s ease;
+              padding: 8px;
+            }
+
+            .swiper-button-next:hover,
+            .swiper-button-prev:hover {
+              background: rgba(15, 23, 42, 0.9);
+              border-color: rgba(96, 165, 250, 0.5);
+              box-shadow: 0 0 20px rgba(96, 165, 250, 0.3);
+            }
+
+            .swiper-button-next::after,
+            .swiper-button-prev::after {
+              font-size: 18px;
+              font-weight: bold;
+            }
+
+            .swiper-pagination-bullet {
+              background: rgba(96, 165, 250, 0.3);
+              opacity: 0.6;
+              width: 10px;
+              height: 10px;
+              border-radius: 50%;
+              transition: all 0.3s ease;
+            }
+
+            .swiper-pagination-bullet-active {
+              background: #60a5fa;
+              opacity: 1;
+              width: 32px;
+              border-radius: 5px;
+              box-shadow: 0 0 15px rgba(96, 165, 250, 0.5);
+            }
+
+            .swiper {
+              overflow: visible;
+            }
+          `}</style>
+        </motion.div>
       </div>
 
       <AnimatePresence>
