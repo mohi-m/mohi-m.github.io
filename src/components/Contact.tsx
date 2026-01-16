@@ -1,5 +1,6 @@
 import { Mail, Github, Linkedin } from "lucide-react";
 import { motion } from "framer-motion";
+import { trackContactClick } from "../utils/analytics";
 
 export function Contact() {
   const contacts = [
@@ -51,6 +52,7 @@ export function Contact() {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={() => trackContactClick(contact.label.toLowerCase())}
               className="group flex flex-col items-center p-6 bg-dark-300/30 backdrop-blur-sm rounded-xl hover:shadow-2xl hover:shadow-secondary-500/20 transition-all duration-300 border border-dark-400/50"
             >
               <motion.div

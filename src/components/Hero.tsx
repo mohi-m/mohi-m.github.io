@@ -3,6 +3,7 @@ import { useCallback } from "react";
 import Particles from "react-tsparticles";
 import type { Engine } from "tsparticles-engine";
 import { loadSlim } from "tsparticles-slim";
+import { trackCTAClick } from "../utils/analytics";
 
 export function Hero() {
   const { scrollY } = useScroll();
@@ -10,8 +11,7 @@ export function Hero() {
   const particlesInit = useCallback(async (engine: Engine) => {
     await loadSlim(engine);
   }, []);
-  const particlesLoaded = useCallback(async () => {
-  }, []);
+  const particlesLoaded = useCallback(async () => {}, []);
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
@@ -130,6 +130,7 @@ export function Hero() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             href="#projects"
+            onClick={() => trackCTAClick("view_my_work")}
             className="px-6 py-3 bg-secondary-600 text-white font-semibold rounded-lg hover:bg-secondary-700 transition-colors shadow-lg"
           >
             View My Work
@@ -138,6 +139,7 @@ export function Hero() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             href="#contact"
+            onClick={() => trackCTAClick("contact_me")}
             className="px-6 py-3 border-2 border-secondary-500 text-white font-semibold rounded-lg hover:bg-secondary-500/10 transition-colors shadow-lg"
           >
             Contact Me

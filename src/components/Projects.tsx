@@ -6,6 +6,7 @@ import { Navigation, Pagination, A11y } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { trackProjectClick } from "../utils/analytics";
 
 // Modal component for full-size image
 function ImageModal({
@@ -158,7 +159,7 @@ export function Projects() {
           transition={{ duration: 0.5 }}
           className="relative"
         >
-            <Swiper
+          <Swiper
             modules={[Navigation, Pagination, A11y]}
             spaceBetween={30}
             slidesPerView="auto"
@@ -166,7 +167,7 @@ export function Projects() {
             pagination={{ clickable: true }}
             loop={false}
             className="!pb-16 group"
-            >
+          >
             {projects.map((project, index) => (
               <SwiperSlide key={index} style={{ width: "auto", maxWidth: "400px" }}>
                 <motion.div
@@ -182,7 +183,10 @@ export function Projects() {
                       className="relative h-48 md:h-64 overflow-hidden cursor-pointer group/image"
                       whileHover={{ scale: 1.03 }}
                       transition={{ duration: 0.4, type: "spring", stiffness: 300 }}
-                      onClick={() => setSelectedImage({ url: project.image, title: project.title })}
+                      onClick={() => {
+                        trackProjectClick(project.title, "view_image");
+                        setSelectedImage({ url: project.image, title: project.title });
+                      }}
                     >
                       <img
                         src={project.image}
@@ -260,6 +264,7 @@ export function Projects() {
                           href={project.github}
                           target="_blank"
                           rel="noopener noreferrer"
+                          onClick={() => trackProjectClick(project.title, "view_code")}
                           className="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-secondary-600 to-secondary-700 text-light rounded-lg hover:from-secondary-700 hover:to-secondary-800 transition-all duration-300 text-sm font-medium shadow-lg hover:shadow-secondary-500/50"
                         >
                           <Github size={18} />

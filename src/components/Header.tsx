@@ -1,6 +1,7 @@
 import { Github, Linkedin, Mail } from "lucide-react";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { trackNavClick, trackSocialClick } from "../utils/analytics";
 
 // List of navigation components
 const components = ["projects", "experience", "education", "skills", "contact"];
@@ -42,6 +43,7 @@ export function Header() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 href={`#${item}`}
+                onClick={() => trackNavClick(item)}
                 className="text-primary-200 hover:text-secondary-400 transition-colors font-bold capitalize"
               >
                 {item}
@@ -50,9 +52,9 @@ export function Header() {
           </div>
           <div className="flex items-center gap-4">
             {[
-              { icon: Github, href: "https://github.com/mohi-m" },
-              { icon: Linkedin, href: "https://www.linkedin.com/in/mohi-m/" },
-              { icon: Mail, href: "mailto:mohi2@illinois.edu" },
+              { icon: Github, href: "https://github.com/mohi-m", name: "github" },
+              { icon: Linkedin, href: "https://www.linkedin.com/in/mohi-m/", name: "linkedin" },
+              { icon: Mail, href: "mailto:mohi2@illinois.edu", name: "email" },
             ].map((item, index) => (
               <motion.a
                 key={index}
@@ -61,6 +63,7 @@ export function Header() {
                 href={item.href}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackSocialClick(item.name)}
                 className="text-primary-200 hover:text-secondary-400 transition-colors"
               >
                 <item.icon size={20} />
