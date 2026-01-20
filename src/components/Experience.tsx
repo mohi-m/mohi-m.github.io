@@ -116,9 +116,8 @@ export function Experience() {
       location: "Champaign, IL",
       duration: "May 2025 - Present",
       description: [
-        "Co-authored an HCI research paper (under review) titled “Unpacking Parent Concerns and Controls on Children’s Generative AI Tools,” involving large-scale qualitative analysis of over 450 Reddit posts using thematic content analysis and GPT-4o-assisted data filtering; findings inform design principles for family-centered GenAI systems.",
-        "Leading ongoing research on LLM alignment and personalization in the context of child-AI interaction, specifically aligning chatbot behavior to mirror parental communication styles and values.",
-        "Experimenting with test-time alignment techniques (e.g., sampling based and guided decoding) and automatic prompt engineering pipelines using the latest OpenAI models (GPT-5 and GPT-4o).",
+        "Co-authored HCI research paper: “Principles of Safe AI Companions for Youth” ACM CHI 2026; designed LLM alignment pipelines to enhance chatbot safety for child-AI interactions",
+        "Implemented test-time alignment and automated prompt-engineering using OpenAI’s GPT-5 to personalize AI responses based on parental communication styles and values",
       ],
       icon: School,
       logo: "/images/experience/iSchool.png",
