@@ -1,47 +1,11 @@
 import { Github } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, A11y } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { trackProjectClick } from "../utils/analytics";
-
-// Modal component for full-size image
-function ImageModal({
-  isOpen,
-  image,
-  title,
-  onClose,
-}: {
-  isOpen: boolean;
-  image: string;
-  title: string;
-  onClose: () => void;
-}) {
-  if (!isOpen) return null;
-
-  return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80"
-      onClick={onClose}
-    >
-      <motion.div
-        initial={{ scale: 0.9 }}
-        animate={{ scale: 1 }}
-        exit={{ scale: 0.9 }}
-        className="relative max-w-4xl max-h-[90vh]"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <img src={image} alt={title} className="w-full h-full object-contain rounded-lg" />
-      </motion.div>
-    </motion.div>
-  );
-}
 
 const projects = [
   {
@@ -137,8 +101,6 @@ const projects = [
 ];
 
 export function Projects() {
-  const [selectedImage, setSelectedImage] = useState<{ url: string; title: string } | null>(null);
-
   return (
     <section id="projects" className="py-20 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -180,13 +142,9 @@ export function Projects() {
                   <div className="grid md:grid-rows-[1fr_1fr] gap-6 p-2 md:p-4 max-h-[400px] md:max-h-[600px]">
                     {/* Image Section */}
                     <motion.div
-                      className="relative h-48 md:h-64 overflow-hidden cursor-pointer group/image"
+                      className="relative h-48 md:h-64 overflow-hidden group/image"
                       whileHover={{ scale: 1.03 }}
                       transition={{ duration: 0.4, type: "spring", stiffness: 300 }}
-                      onClick={() => {
-                        trackProjectClick(project.title, "view_image");
-                        setSelectedImage({ url: project.image, title: project.title });
-                      }}
                     >
                       <img
                         src={project.image}
@@ -198,16 +156,6 @@ export function Projects() {
                         initial={{ opacity: 0 }}
                         whileHover={{ opacity: 1 }}
                       />
-                      <motion.div
-                        className="absolute inset-0 flex items-center justify-center opacity-0 group-hover/image:opacity-100"
-                        initial={{ opacity: 0 }}
-                        whileHover={{ opacity: 1 }}
-                        transition={{ duration: 0.3 }}
-                      >
-                        <div className="text-light text-sm font-medium px-4 py-2 bg-black/50 rounded-lg backdrop-blur">
-                          Click to expand
-                        </div>
-                      </motion.div>
                     </motion.div>
 
                     {/* Content Section */}
@@ -329,17 +277,6 @@ export function Projects() {
           `}</style>
         </motion.div>
       </div>
-
-      <AnimatePresence>
-        {selectedImage && (
-          <ImageModal
-            isOpen={true}
-            image={selectedImage.url}
-            title={selectedImage.title}
-            onClose={() => setSelectedImage(null)}
-          />
-        )}
-      </AnimatePresence>
     </section>
   );
 }

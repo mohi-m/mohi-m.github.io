@@ -24,7 +24,7 @@ export const trackSocialClick = (platform: string) => {
   trackEvent("social_click", { platform });
 };
 
-export const trackProjectClick = (projectName: string, action: "view_code" | "view_image") => {
+export const trackProjectClick = (projectName: string, action: "view_code") => {
   trackEvent("project_click", { project_name: projectName, action });
 };
 
