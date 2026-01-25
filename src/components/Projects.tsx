@@ -18,32 +18,34 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "🎓 UIUC Semester Planner",
-    description: [
-      "Designed and developed a production-ready full-stack web application, implementing RESTful APIs, schema validation, authentication, and cloud deployment to support personalized academic planning workflows.",
-      "Built an AI-assisted recommendation pipeline integrating GPT-5.2 to generate and rank career-aligned course pathways, orchestrated via backend services and persisted in MongoDB for scalable, repeatable recommendations.",
-    ],
-    images: [
-      "/images/projects/uiuc_semester_planner.png",
-      "/images/projects/uiuc_semester_planner.png",
-      "/images/projects/uiuc_semester_planner.png",
-    ],
-    github: "https://github.com/mohi-m/UIUC_Semester_Planner",
-    tags: ["Python", "FastAPI", "TypeScript", "React", "MongoDB", "Firebase Auth", "OpenAI", "Render"],
-  },
-  {
     title: "💰 FinStream-AI",
     description: [
       "Engineered a production-grade AWS ETL pipeline (Airflow) to ingest, validate, and store US stock market data with idempotent tasks, data quality checks, and holiday-aware scheduling, ensuring reliable, zero-duplication loads.",
       "Delivered integrated ML forecasting (LSTM) with MLflow tracking and a React + FastAPI analytics app for interactive charts and portfolio risk metrics; implemented automated deployment using CI/CD on GitHub Actions.",
     ],
     images: [
-      "/images/projects/finstream_ai.png",
-      "/images/projects/finstream_ai.png",
-      "/images/projects/finstream_ai.png",
+      "/images/projects/finstream_demo.gif",
+      "/images/projects/finstream_landing.png",
+      "/images/projects/finstream_portfolio.png",
+      "/images/projects/finstream_portfolio.png",
+      "/images/projects/finstream_profile.png",
     ],
     github: "https://github.com/mohi-m/FinStream-AI",
     tags: ["Python", "AWS", "Apache Airflow", "PostgreSQL", "MLflow", "Docker", "FastAPI", "React", "GitHub Actions"],
+  },
+  {
+    title: "🎓 UIUC Semester Planner",
+    description: [
+      "Designed and developed a production-ready full-stack web application, implementing RESTful APIs, schema validation, authentication, and cloud deployment to support personalized academic planning workflows.",
+      "Built an AI-assisted recommendation pipeline integrating GPT-5.2 to generate and rank career-aligned course pathways, orchestrated via backend services and persisted in MongoDB for scalable, repeatable recommendations.",
+    ],
+    images: [
+      "/images/projects/uiuc_semester_planeer_demo.gif",
+      "/images/projects/uiuc_semester_planner.png",
+      "/images/projects/uiuc_semester_planner_landing.png",
+    ],
+    github: "https://github.com/mohi-m/UIUC_Semester_Planner",
+    tags: ["Python", "FastAPI", "TypeScript", "React", "MongoDB", "Firebase Auth", "OpenAI", "Render"],
   },
   {
     title: "🐘 Postgres Cluster Monitor",
@@ -51,13 +53,19 @@ const projects: Project[] = [
       "Built async REST API with multi-node health checks, connection pooling, and latency diagnostics; implemented pgBouncer proxy with round-robin load balancing across read replicas.",
       "Developed real-time React dashboard with live status monitoring and integrated Locust-powered load testing UI; containerized full stack with Docker Compose for reproducible multi-environment deployments.",
     ],
-    images: [
-      "/images/projects/postgres-cluster-monitor.png",
-      "/images/projects/postgres-cluster-monitor.png",
-      "/images/projects/postgres-cluster-monitor.png",
-    ],
+    images: ["/images/projects/postgres-cluster-monitor-demo.gif", "/images/projects/postgres-cluster-monitor.png"],
     github: "https://github.com/mohi-m/Postgres-Cluster-Monitor",
     tags: ["Python", "Azure", "FastAPI", "pgBouncer", "Locust", "Docker", "PostgreSQL", "React"],
+  },
+  {
+    title: "🌍 Energy Generation Overview in Top Economies",
+    description: [
+      "Cleaned and preprocessed the EIU Energy dataset (2000–2024) using Tableau Prep to enable structured analysis.",
+      "Built interactive dashboards in Tableau to visualize energy consumption, emissions, and renewable vs. non-renewable transitions across top global economies.",
+    ],
+    images: ["/images/projects/tableau_proj.png"],
+    github: "https://github.com/mohi-m/energy-dashboard",
+    tags: ["Tableau", "Tableau Prep", "ETL"],
   },
   {
     title: "🔐 Chat PII Anonymizer",
@@ -65,11 +73,7 @@ const projects: Project[] = [
       "Developed a tool to anonymize PII from Character.ai chat logs, enabling ethical analysis of AI interactions with children.",
       "Integrated spaCy NER, regex-based detection, and Presidio with a Tkinter GUI and evaluation metrics (precision, recall, F1-score) for accurate and user-friendly anonymization.",
     ],
-    images: [
-      "/images/projects/chat_pii_anonymizer.png",
-      "/images/projects/chat_pii_anonymizer.png",
-      "/images/projects/chat_pii_anonymizer.png",
-    ],
+    images: ["/images/projects/chat_pii_anonymizer.png"],
     github: "https://github.com/mohi-m/chat-pii-anonymizer",
     tags: ["Python", "spaCy", "Presidio", "Regex", "Faker", "Tkinter", "scikit-learn", "Logging"],
   },
@@ -79,27 +83,9 @@ const projects: Project[] = [
       "Built a CNN-based image classifier to detect face masks with 90%+ validation accuracy, trained on preprocessed grayscale images.",
       "Deployed real-time detection using OpenCV and Haar cascades with live webcam inference and labeled bounding box overlays.",
     ],
-    images: [
-      "/images/projects/face_mask_detection.png",
-      "/images/projects/face_mask_detection.png",
-      "/images/projects/face_mask_detection.png",
-    ],
+    images: ["/images/projects/face_mask_detection.png"],
     github: "https://github.com/mohi-m/face-mask-detection",
     tags: ["Python", "TensorFlow", "Keras", "OpenCV", "NumPy", "Pandas", "Haar Cascade"],
-  },
-  {
-    title: "🌍 Energy Generation Overview in Top Economies",
-    description: [
-      "Cleaned and preprocessed the EIU Energy dataset (2000–2024) using Tableau Prep to enable structured analysis.",
-      "Built interactive dashboards in Tableau to visualize energy consumption, emissions, and renewable vs. non-renewable transitions across top global economies.",
-    ],
-    images: [
-      "/images/projects/tableau_proj.png",
-      "/images/projects/tableau_proj.png",
-      "/images/projects/tableau_proj.png",
-    ],
-    github: "https://github.com/mohi-m/energy-dashboard",
-    tags: ["Tableau", "Tableau Prep", "ETL"],
   },
   {
     title: "💻 Personal Portfolio Website",
@@ -107,11 +93,7 @@ const projects: Project[] = [
       "Designed and developed a modern, responsive portfolio using React, TypeScript, and TailwindCSS with smooth Framer Motion animations and dark mode support.",
       "Set up automated CI/CD with GitHub Actions for seamless deployment to GitHub Pages.",
     ],
-    images: [
-      "/images/projects/portfolio_website.png",
-      "/images/projects/portfolio_website.png",
-      "/images/projects/portfolio_website.png",
-    ],
+    images: ["/images/projects/portfolio_website.png"],
     github: "https://github.com/mohi-m/mohi-m.github.io",
     tags: ["React", "TypeScript", "TailwindCSS", "Framer Motion", "Vite", "GitHub Actions"],
   },
@@ -121,7 +103,7 @@ const projects: Project[] = [
       "Built predictive models on 150k+ rows of e-cigarette legislation data, achieving 8% MAPE in forecasting policy stringency and 80% accuracy in identifying high-risk regions.",
       "Created data visualizations with ggplot2 to highlight trends and support public health decision-making.",
     ],
-    images: ["/images/projects/Arima_proj.png", "/images/projects/Arima_proj.png", "/images/projects/Arima_proj.png"],
+    images: ["/images/projects/Arima_proj.png"],
     github: "https://github.com/mohi-m/E-Cigarette_Regulations_Analysis",
     tags: ["R", "Time-Series Analysis", "ARIMA", "Logistic Regression", "ggplot2"],
   },
@@ -131,11 +113,7 @@ const projects: Project[] = [
       "Created a real-time speech-to-sign language converter that translates spoken English into ISL and ASL gestures using a user-friendly interface.",
       "Implemented fallback logic to display alphabet images for unrecognized words, ensuring robust and inclusive communication support.",
     ],
-    images: [
-      "/images/projects/SignBridge_proj.png",
-      "/images/projects/SignBridge_proj.png",
-      "/images/projects/SignBridge_proj.png",
-    ],
+    images: ["/images/projects/SignBridge_proj.png"],
     github: "https://github.com/mohi-m/SignBridge",
     tags: ["Python", "Tkinter", "Speech Recognition", "Gesture Recognition", "Accessibility"],
   },
