@@ -73,14 +73,14 @@ const TimelineSection = ({ items }: TimelineSectionProps) => (
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                     <div>
                       <h3 className="text-xl font-bold text-light">{exp.title}</h3>
-                      <p className="text-secondary-300 font-semibold">{exp.company}</p>
+                      <p className="text-secondary-300 font-semibold text-sm">{exp.company}</p>
                     </div>
                     <div className="text-right mt-2 md:mt-0">
-                      <p className="text-primary-200">{exp.location}</p>
-                      <p className="text-primary-300">{exp.duration}</p>
+                      <p className="text-primary-200 text-sm">{exp.location}</p>
+                      <p className="text-primary-300 text-sm">{exp.duration}</p>
                     </div>
                   </div>
-                  <ul className="list-disc list-inside space-y-2 text-primary-200">
+                  <ul className="list-disc list-inside space-y-2 text-primary-200 text-sm">
                     {exp.description.map((point, idx) => (
                       <li key={idx}>{point}</li>
                     ))}
@@ -99,29 +99,21 @@ export function Education() {
   const education: TimelineItem[] = [
     {
       type: "education",
-      title: "MS in Information Management",
+      title: "MS in Information Science",
       company: "University of Illinois Urbana-Champaign",
       location: "Champaign, IL",
       duration: "Aug 2024 - Present",
-      description: [
-        "GPA: 4.0/4.0",
-        "Specializing in Data Science and Analytics",
-        "Relevant Coursework: Data Mining, Machine Learning, NLP, Data Visualization",
-      ],
+      description: ["GPA: 4.0/4.0", "Specializing in Data Science and Analytics"],
       icon: GraduationCap,
       logo: "/images/education/UIUC_logo.png",
     },
     {
       type: "education",
-      title: "B.Tech in Electrical & Computer Engineering",
+      title: "BS in Electrical & Computer Engineering",
       company: "Manipal Institute of Technology",
       location: "Manipal, India",
       duration: "Aug 2017 - Jul 2021",
-      description: [
-        "GPA: 3.56/4.0",
-        "Specialization in Embedded Systems",
-        "Head of Formula Manipal Electric (FSAE Team)",
-      ],
+      description: ["GPA: 3.56/4.0", "Specialization in Embedded Systems"],
       icon: GraduationCap,
       logo: "/images/education/MAHE_logo.jpg",
     },
@@ -135,7 +127,7 @@ export function Education() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.5 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-4xl font-bold text-center text-light mb-12"
+          className="text-6xl font-bold text-center text-light mb-12"
         >
           Education
         </motion.h2>

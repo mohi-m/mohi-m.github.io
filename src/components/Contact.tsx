@@ -33,7 +33,7 @@ export function Contact() {
           viewport={{ once: false }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl font-bold text-light mb-4">Get in Touch</h2>
+          <h2 className="text-6xl font-bold text-light mb-4">Get in Touch</h2>
           <p className="text-primary-200">Feel free to reach out through any of these platforms</p>
         </motion.div>
 

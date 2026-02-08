@@ -23,7 +23,7 @@ export function Hero() {
         id="tsparticles"
         init={particlesInit}
         loaded={particlesLoaded}
-        className="absolute inset-0 z-10"
+        className="absolute inset-0 z-0 opacity-75"
         options={{
           background: {
             color: {

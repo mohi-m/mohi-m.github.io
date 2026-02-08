@@ -18,7 +18,7 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "💰 FinStream-AI",
+    title: "FinStream-AI",
     description: [
       "Engineered a production-grade AWS ETL pipeline (Airflow) to ingest, validate, and store US stock market data with idempotent tasks, data quality checks, and holiday-aware scheduling, ensuring reliable, zero-duplication loads.",
       "Delivered integrated ML forecasting (LSTM) with MLflow tracking and a React + FastAPI analytics app for interactive charts and portfolio risk metrics; implemented automated deployment using CI/CD on GitHub Actions.",
@@ -34,7 +34,7 @@ const projects: Project[] = [
     tags: ["Python", "AWS", "Apache Airflow", "PostgreSQL", "MLflow", "Docker", "FastAPI", "React", "GitHub Actions"],
   },
   {
-    title: "🎓 UIUC Semester Planner",
+    title: "UIUC Semester Planner",
     description: [
       "Designed and developed a production-ready full-stack web application, implementing RESTful APIs, schema validation, authentication, and cloud deployment to support personalized academic planning workflows.",
       "Built an AI-assisted recommendation pipeline integrating GPT-5.2 to generate and rank career-aligned course pathways, orchestrated via backend services and persisted in MongoDB for scalable, repeatable recommendations.",
@@ -48,7 +48,7 @@ const projects: Project[] = [
     tags: ["Python", "FastAPI", "TypeScript", "React", "MongoDB", "Firebase Auth", "OpenAI", "Render"],
   },
   {
-    title: "🐘 Postgres Cluster Monitor",
+    title: "Postgres Cluster Monitor",
     description: [
       "Built async REST API with multi-node health checks, connection pooling, and latency diagnostics; implemented pgBouncer proxy with round-robin load balancing across read replicas.",
       "Developed real-time React dashboard with live status monitoring and integrated Locust-powered load testing UI; containerized full stack with Docker Compose for reproducible multi-environment deployments.",
@@ -58,7 +58,7 @@ const projects: Project[] = [
     tags: ["Python", "Azure", "FastAPI", "pgBouncer", "Locust", "Docker", "PostgreSQL", "React"],
   },
   {
-    title: "🌍 Energy Generation Overview in Top Economies",
+    title: "Energy Generation Overview in Top Economies",
     description: [
       "Cleaned and preprocessed the EIU Energy dataset (2000–2024) using Tableau Prep to enable structured analysis.",
       "Built interactive dashboards in Tableau to visualize energy consumption, emissions, and renewable vs. non-renewable transitions across top global economies.",
@@ -68,7 +68,7 @@ const projects: Project[] = [
     tags: ["Tableau", "Tableau Prep", "ETL"],
   },
   {
-    title: "🔐 Chat PII Anonymizer",
+    title: "Chat PII Anonymizer",
     description: [
       "Developed a tool to anonymize PII from Character.ai chat logs, enabling ethical analysis of AI interactions with children.",
       "Integrated spaCy NER, regex-based detection, and Presidio with a Tkinter GUI and evaluation metrics (precision, recall, F1-score) for accurate and user-friendly anonymization.",
@@ -78,7 +78,7 @@ const projects: Project[] = [
     tags: ["Python", "spaCy", "Presidio", "Regex", "Faker", "Tkinter", "scikit-learn", "Logging"],
   },
   {
-    title: "😷 Face Mask Detection using CNN & OpenCV",
+    title: "Face Mask Detection using CNN & OpenCV",
     description: [
       "Built a CNN-based image classifier to detect face masks with 90%+ validation accuracy, trained on preprocessed grayscale images.",
       "Deployed real-time detection using OpenCV and Haar cascades with live webcam inference and labeled bounding box overlays.",
@@ -88,7 +88,7 @@ const projects: Project[] = [
     tags: ["Python", "TensorFlow", "Keras", "OpenCV", "NumPy", "Pandas", "Haar Cascade"],
   },
   {
-    title: "💻 Personal Portfolio Website",
+    title: "Personal Portfolio Website",
     description: [
       "Designed and developed a modern, responsive portfolio using React, TypeScript, and TailwindCSS with smooth Framer Motion animations and dark mode support.",
       "Set up automated CI/CD with GitHub Actions for seamless deployment to GitHub Pages.",
@@ -98,7 +98,7 @@ const projects: Project[] = [
     tags: ["React", "TypeScript", "TailwindCSS", "Framer Motion", "Vite", "GitHub Actions"],
   },
   {
-    title: "🚭 E-Cigarette Policy Analysis",
+    title: "E-Cigarette Policy Analysis",
     description: [
       "Built predictive models on 150k+ rows of e-cigarette legislation data, achieving 8% MAPE in forecasting policy stringency and 80% accuracy in identifying high-risk regions.",
       "Created data visualizations with ggplot2 to highlight trends and support public health decision-making.",
@@ -108,7 +108,7 @@ const projects: Project[] = [
     tags: ["R", "Time-Series Analysis", "ARIMA", "Logistic Regression", "ggplot2"],
   },
   {
-    title: "🤟 SignBridge: Speech-to-ISL/ASL Gesture Conversion",
+    title: "SignBridge: Speech-to-ISL/ASL Gesture Conversion",
     description: [
       "Created a real-time speech-to-sign language converter that translates spoken English into ISL and ASL gestures using a user-friendly interface.",
       "Implemented fallback logic to display alphabet images for unrecognized words, ensuring robust and inclusive communication support.",
@@ -154,7 +154,7 @@ function ProjectModal({ project, isOpen, onClose }: { project: Project | null; i
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             transition={{ duration: 0.3, type: "spring", stiffness: 300 }}
-            className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-gradient-to-br from-dark-300/95 to-dark-400/95 backdrop-blur-xl rounded-2xl border border-secondary-500/20 shadow-2xl"
+            className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-gradient-to-br from-dark-300/95 to-dark-400/95  rounded-2xl border border-secondary-500/20 shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
@@ -297,7 +297,7 @@ export function Projects() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.1 }}
           transition={{ duration: 0.5 }}
-          className="relative"
+          className="relative overflow-visible"
         >
           <Swiper
             modules={[Navigation, Pagination, A11y]}
