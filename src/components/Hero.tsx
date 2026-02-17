@@ -104,7 +104,7 @@ export function Hero() {
       />
 
       {/* Main Content */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10 bg-dark-bg/0 p-8 rounded-lg z-20">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative bg-dark-bg/0 p-8 rounded-lg z-20">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
           <h1 className="text-5xl sm:text-6xl font-extrabold text-white mb-6 tracking-tight drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">
             Hi, I'm <span className="text-secondary-400 drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">Mohi</span>

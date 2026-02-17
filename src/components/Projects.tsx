@@ -1,4 +1,4 @@
-import { Github, X } from "lucide-react";
+import { ExternalLink, Github, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, A11y } from "swiper/modules";
@@ -10,8 +10,10 @@ import { useState, useEffect } from "react";
 
 interface Project {
   title: string;
+  shortDescription: string;
   description: string[];
   images: string[];
+  demo?: string;
   github: string;
   tags: string[];
 }
@@ -19,6 +21,8 @@ interface Project {
 const projects: Project[] = [
   {
     title: "FinStream-AI",
+    shortDescription:
+      "Portfolio Management platform with real-time S&P 500 data, AI-powered insights, and automated data pipelines",
     description: [
       "Engineered a production-grade AWS ETL pipeline (Airflow) to ingest, validate, and store US stock market data with idempotent tasks, data quality checks, and holiday-aware scheduling, ensuring reliable, zero-duplication loads.",
       "Delivered integrated ML forecasting (LSTM) with MLflow tracking and a React + FastAPI analytics app for interactive charts and portfolio risk metrics; implemented automated deployment using CI/CD on GitHub Actions.",
@@ -26,15 +30,18 @@ const projects: Project[] = [
     images: [
       "/images/projects/finstream_demo.gif",
       "/images/projects/finstream_landing.png",
-      "/images/projects/finstream_portfolio.png",
+      "/images/projects/finstream_stocks.png",
       "/images/projects/finstream_portfolio.png",
       "/images/projects/finstream_profile.png",
     ],
+    demo: "https://finstream.mohi-m.com/",
     github: "https://github.com/mohi-m/FinStream-AI",
     tags: ["Python", "AWS", "Apache Airflow", "PostgreSQL", "MLflow", "Docker", "FastAPI", "React", "GitHub Actions"],
   },
   {
     title: "UIUC Semester Planner",
+    shortDescription:
+      "Interactive semester planner for UIUC that generates optimized course schedules and career-aligned pathways",
     description: [
       "Designed and developed a production-ready full-stack web application, implementing RESTful APIs, schema validation, authentication, and cloud deployment to support personalized academic planning workflows.",
       "Built an AI-assisted recommendation pipeline integrating GPT-5.2 to generate and rank career-aligned course pathways, orchestrated via backend services and persisted in MongoDB for scalable, repeatable recommendations.",
@@ -44,11 +51,13 @@ const projects: Project[] = [
       "/images/projects/uiuc_semester_planner.png",
       "/images/projects/uiuc_semester_planner_landing.png",
     ],
+    demo: "https://uiuc-semester-planner.onrender.com/",
     github: "https://github.com/mohi-m/UIUC_Semester_Planner",
     tags: ["Python", "FastAPI", "TypeScript", "React", "MongoDB", "Firebase Auth", "OpenAI", "Render"],
   },
   {
     title: "Postgres Cluster Monitor",
+    shortDescription: "Distributed PostgreSQL Cluster Monitoring and Stress Testing tool",
     description: [
       "Built async REST API with multi-node health checks, connection pooling, and latency diagnostics; implemented pgBouncer proxy with round-robin load balancing across read replicas.",
       "Developed real-time React dashboard with live status monitoring and integrated Locust-powered load testing UI; containerized full stack with Docker Compose for reproducible multi-environment deployments.",
@@ -58,17 +67,21 @@ const projects: Project[] = [
     tags: ["Python", "Azure", "FastAPI", "pgBouncer", "Locust", "Docker", "PostgreSQL", "React"],
   },
   {
-    title: "Energy Generation Overview in Top Economies",
+    title: "Energy Analysis Top Economies",
+    shortDescription:
+      "Interactive Tableau dashboard visualizing energy distribution and consumption patterns across the world's top economies",
     description: [
       "Cleaned and preprocessed the EIU Energy dataset (2000–2024) using Tableau Prep to enable structured analysis.",
       "Built interactive dashboards in Tableau to visualize energy consumption, emissions, and renewable vs. non-renewable transitions across top global economies.",
     ],
     images: ["/images/projects/tableau_proj.png"],
+    demo: "https://public.tableau.com/app/profile/fnu.mohi/viz/EnergyOverviewofTopEconomies/EnergyOverviewofTopEconomies",
     github: "https://github.com/mohi-m/energy-dashboard",
     tags: ["Tableau", "Tableau Prep", "ETL"],
   },
   {
     title: "Chat PII Anonymizer",
+    shortDescription: "A python application to anonymize any PII content from a chat file",
     description: [
       "Developed a tool to anonymize PII from Character.ai chat logs, enabling ethical analysis of AI interactions with children.",
       "Integrated spaCy NER, regex-based detection, and Presidio with a Tkinter GUI and evaluation metrics (precision, recall, F1-score) for accurate and user-friendly anonymization.",
@@ -78,7 +91,8 @@ const projects: Project[] = [
     tags: ["Python", "spaCy", "Presidio", "Regex", "Faker", "Tkinter", "scikit-learn", "Logging"],
   },
   {
-    title: "Face Mask Detection using CNN & OpenCV",
+    title: "Face Mask Detector",
+    shortDescription: "A python application to detect fack mask on human faces",
     description: [
       "Built a CNN-based image classifier to detect face masks with 90%+ validation accuracy, trained on preprocessed grayscale images.",
       "Deployed real-time detection using OpenCV and Haar cascades with live webcam inference and labeled bounding box overlays.",
@@ -88,17 +102,8 @@ const projects: Project[] = [
     tags: ["Python", "TensorFlow", "Keras", "OpenCV", "NumPy", "Pandas", "Haar Cascade"],
   },
   {
-    title: "Personal Portfolio Website",
-    description: [
-      "Designed and developed a modern, responsive portfolio using React, TypeScript, and TailwindCSS with smooth Framer Motion animations and dark mode support.",
-      "Set up automated CI/CD with GitHub Actions for seamless deployment to GitHub Pages.",
-    ],
-    images: ["/images/projects/portfolio_website.png"],
-    github: "https://github.com/mohi-m/mohi-m.github.io",
-    tags: ["React", "TypeScript", "TailwindCSS", "Framer Motion", "Vite", "GitHub Actions"],
-  },
-  {
     title: "E-Cigarette Policy Analysis",
+    shortDescription: "A data-driven analysis of e-cigarette policy stringency in US",
     description: [
       "Built predictive models on 150k+ rows of e-cigarette legislation data, achieving 8% MAPE in forecasting policy stringency and 80% accuracy in identifying high-risk regions.",
       "Created data visualizations with ggplot2 to highlight trends and support public health decision-making.",
@@ -108,7 +113,9 @@ const projects: Project[] = [
     tags: ["R", "Time-Series Analysis", "ARIMA", "Logistic Regression", "ggplot2"],
   },
   {
-    title: "SignBridge: Speech-to-ISL/ASL Gesture Conversion",
+    title: "SignBridge",
+    shortDescription:
+      "An real-time application that converts speech to Indian Sign Language (ISL) or American Sign Language (ASL)",
     description: [
       "Created a real-time speech-to-sign language converter that translates spoken English into ISL and ASL gestures using a user-friendly interface.",
       "Implemented fallback logic to display alphabet images for unrecognized words, ensuring robust and inclusive communication support.",
@@ -241,7 +248,7 @@ function ProjectModal({ project, isOpen, onClose }: { project: Project | null; i
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
-                className="flex justify-center"
+                className="grid grid-cols-2 justify-center gap-12 align-middle max-w-lg mx-auto"
               >
                 <motion.a
                   whileHover={{ scale: 1.05 }}
@@ -250,10 +257,22 @@ function ProjectModal({ project, isOpen, onClose }: { project: Project | null; i
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => trackProjectClick(project.title, "view_code")}
-                  className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-secondary-600 to-secondary-700 text-light rounded-lg hover:from-secondary-700 hover:to-secondary-800 transition-all duration-300 text-base font-medium shadow-lg hover:shadow-secondary-500/50"
+                  className="flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-secondary-600 to-secondary-700 text-light rounded-lg hover:from-secondary-700 hover:to-secondary-800 transition-all duration-300 text-base font-medium shadow-lg hover:shadow-secondary-500/50"
                 >
                   <Github size={20} />
-                  View Code on GitHub
+                  View Code
+                </motion.a>
+                <motion.a
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  href={project.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackProjectClick(project.title, "view_code")}
+                  className="flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-secondary-600 to-secondary-700 text-light rounded-lg hover:from-secondary-700 hover:to-secondary-800 transition-all duration-300 text-base font-medium shadow-lg hover:shadow-secondary-500/50"
+                >
+                  <ExternalLink size={20} />
+                  Live Demo
                 </motion.a>
               </motion.div>
             </div>
@@ -315,7 +334,7 @@ export function Projects() {
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: false }}
                   transition={{ duration: 0.4 }}
-                  className="group relative bg-gradient-to-br from-dark-300/40 to-dark-300/20 backdrop-blur-md rounded-2xl overflow-hidden hover:shadow-2xl hover:shadow-secondary-500/25 transition-all duration-500 border border-secondary-500/10 cursor-pointer"
+                  className="group relative bg-gradient-to-br from-dark-300/40 to-dark-300/20 backdrop-blur-md rounded-2xl overflow-hidden hover:shadow-2xl hover:shadow-secondary-500/25 hover:border-secondary-500/30 transition-all duration-500 border border-secondary-500/10 cursor-pointer pb-4"
                   onClick={() => openModal(project)}
                 >
                   <div className="grid md:grid-rows-[1fr_1fr] gap-6 p-2 md:p-4 max-h-[400px] md:max-h-[600px]">
@@ -349,18 +368,21 @@ export function Projects() {
                         viewport={{ once: false }}
                         transition={{ duration: 0.4, delay: 0.1 }}
                       >
-                        <h3 className="text-xl md:text-2xl font-bold flex items-center justify-center text-light mb-4 group-hover:text-secondary-300 transition-colors duration-300">
+                        <h3 className="text-xl md:text-2xl font-bold text-center text-secondary-300">
                           {project.title}
                         </h3>
-                        {/* ToDo: Add this in a modal window */}
-                        {/* <ul className="list-disc text-primary-200 mb-4 pl-5 space-y-2 text-sm md:text-base">
-                          {project.description.map((point, idx) => (
-                            <li key={idx} className="leading-relaxed">
-                              {point}
-                            </li>
-                          ))}
-                        </ul> */}
                       </motion.div>
+
+                      {/* Short Description */}
+                      <motion.p
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: false }}
+                        transition={{ duration: 0.4, delay: 0.2 }}
+                        className="text-center text-xs md:text-sm text-secondary-400 px-2"
+                      >
+                        {project.shortDescription}
+                      </motion.p>
 
                       {/* Tags */}
                       <motion.div
@@ -374,7 +396,7 @@ export function Projects() {
                           <motion.span
                             key={tagIndex}
                             whileHover={{ scale: 1.05, translateY: -2 }}
-                            className="px-3 py-1.5 bg-gradient-to-r from-secondary-600/20 to-secondary-500/10 text-secondary-300 rounded-xl text-xs md:text-sm font-medium border border-secondary-500/30 hover:border-secondary-400/50 hover:bg-secondary-600/30 transition-all duration-300"
+                            className="px-2 py-1 bg-gradient-to-r from-secondary-600/20 to-secondary-500/10 text-secondary-300 rounded-xl text-xs md:text-xs font-normal border border-secondary-500/30 hover:border-secondary-400/50 hover:bg-secondary-600/30 transition-all duration-300"
                           >
                             {tag}
                           </motion.span>
@@ -399,11 +421,28 @@ export function Projects() {
                             e.stopPropagation();
                             trackProjectClick(project.title, "view_code");
                           }}
-                          className="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-secondary-600 to-secondary-700 text-light rounded-lg hover:from-secondary-700 hover:to-secondary-800 transition-all duration-300 text-sm font-medium shadow-lg hover:shadow-secondary-500/50"
+                          className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-secondary-600 to-secondary-700 text-light rounded-lg hover:from-secondary-700 hover:to-secondary-800 transition-all duration-300 text-xs font-medium shadow-lg hover:shadow-secondary-500/50"
                         >
                           <Github size={18} />
                           View Code
                         </motion.a>
+                        {project.demo && (
+                          <motion.a
+                            whileHover={{ scale: 1.08, translateY: -2 }}
+                            whileTap={{ scale: 0.95 }}
+                            href={project.demo}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              trackProjectClick(project.title, "view_demo");
+                            }}
+                            className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-secondary-600 to-secondary-700 text-light rounded-lg hover:from-secondary-700 hover:to-secondary-800 transition-all duration-300 text-xs font-medium shadow-lg hover:shadow-secondary-500/50"
+                          >
+                            <ExternalLink size={18} />
+                            View Demo
+                          </motion.a>
+                        )}
                       </motion.div>
                     </div>
                   </div>
